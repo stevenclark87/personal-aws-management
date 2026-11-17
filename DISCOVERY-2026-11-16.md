@@ -53,6 +53,8 @@ The SCP policy type was then enabled. AWS attached its default `FullAWSAccess` p
 
 AWS Policy Lab then successfully deployed and deleted a one-bucket tagged CloudFormation fixture through `OrganizationAccountAccessRole`. The fixture verified the cross-account deployment path and all four standard resource tags without creating any production resource.
 
+The reviewed Math Facts Space Academy stack was then executed in AWS Policy Lab only. All 11 resources reached `CREATE_COMPLETE`; the private bucket blocks public access, standard tags were observed on the taggable workload resources, and the unauthenticated API returned `401`.
+
 ## Recommended next changes — proposed, not performed
 
 1. Leave `FullAWSAccess` in place; do not attach a service allowlist or Region-deny policy yet.
