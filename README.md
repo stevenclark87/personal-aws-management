@@ -37,6 +37,8 @@ The foundation provisions only a private S3 origin, CloudFront, HTTP API with Au
 
 Follow [docs/runbooks/first-deployment.md](docs/runbooks/first-deployment.md). Use the `personal-admin` IAM Identity Center profile and the target account's `OrganizationAccountAccessRole`; do not use the management-account root user.
 
+The exact IAM Identity Center sign-in flow, account profiles, and long-term role boundaries are in [docs/deployment-access.md](docs/deployment-access.md).
+
 The first Policy Lab review-only application change set is recorded in [change-records/math-facts-policy-lab-review-2026-11-16.md](change-records/math-facts-policy-lab-review-2026-11-16.md). It must not be executed without separate approval.
 
 ## Organization-policy package
