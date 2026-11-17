@@ -1,7 +1,15 @@
 {
   "policyPackageVersion": "0.1.0",
-  "status": "draft-not-attached",
-  "targets": [],
+  "status": "lab-test-in-progress",
+  "targets": [
+    {
+      "policyName": "standard-resource-tags",
+      "policyId": "p-95yferwt1v",
+      "targetAccountId": "769674418312",
+      "targetAccountName": "AWS Policy Lab",
+      "mode": "reporting-only"
+    }
+  ],
   "policies": [
     {
       "name": "deny-leave-organization",

@@ -9,6 +9,7 @@
 | OU | `App-Experiment` (`ou-xlr2-pdspqlnq`) |
 | Provisioning role | `OrganizationAccountAccessRole` |
 | SCP attachments at creation | None |
+| Tag-policy attachment | `standard-resource-tags` (`p-95yferwt1v`), reporting-only, lab account only |
 
 ## Account tags
 
@@ -19,4 +20,4 @@
 
 ## Next permitted use
 
-This account is the only first target for the policy package in `policies/`. Attachments require a separate reviewed change record and explicit approval; no policy is attached merely because the account now exists.
+This account is the only first target for the policy package in `policies/`. The reporting-only standard-tag policy is attached for validation. Any SCP attachment requires a separate reviewed change record and explicit approval.

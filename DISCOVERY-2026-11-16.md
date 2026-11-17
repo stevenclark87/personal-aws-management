@@ -45,7 +45,9 @@ No application resources, IAM roles, billing settings, Auth0 settings, or SCPs w
 
 ## Policy-lab account — created 2026-11-16
 
-**AWS Policy Lab** (`769674418312`) was created as a member account, moved to `App-Experiment`, and tagged with the standard platform tags. Its initial `OrganizationAccountAccessRole` is available for controlled lab access. No SCP or tag policy is attached to the account.
+**AWS Policy Lab** (`769674418312`) was created as a member account, moved to `App-Experiment`, and tagged with the standard platform tags. Its initial `OrganizationAccountAccessRole` is available for controlled lab access. No SCP is attached to the account.
+
+The Organizations Tag Policy type was then enabled and the reporting-only `standard-resource-tags` policy (`p-95yferwt1v`) was attached to AWS Policy Lab only. No SCP is attached to the lab or production account.
 
 ## Recommended next changes — proposed, not performed
 
