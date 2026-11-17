@@ -8,7 +8,7 @@
 | Account ID | `769674418312` |
 | OU | `App-Experiment` (`ou-xlr2-pdspqlnq`) |
 | Provisioning role | `OrganizationAccountAccessRole` |
-| SCP attachments at creation | None |
+| SCP attachment after lab approval | `deny-leave-organization` (`p-ukbxfvla`), lab account only |
 | Tag-policy attachment | `standard-resource-tags` (`p-95yferwt1v`), reporting-only, lab account only |
 
 ## Account tags
@@ -20,4 +20,4 @@
 
 ## Next permitted use
 
-This account is the only first target for the policy package in `policies/`. The reporting-only standard-tag policy is attached for validation. Any SCP attachment requires a separate reviewed change record and explicit approval.
+This account is the only first target for the policy package in `policies/`. The reporting-only standard-tag policy and the lab-only deny-leave SCP are attached for validation. No custom policy is attached to `Apps-Production`.

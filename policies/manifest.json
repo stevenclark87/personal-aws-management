@@ -8,6 +8,13 @@
       "targetAccountId": "769674418312",
       "targetAccountName": "AWS Policy Lab",
       "mode": "reporting-only"
+    },
+    {
+      "policyName": "deny-leave-organization",
+      "policyId": "p-ukbxfvla",
+      "targetAccountId": "769674418312",
+      "targetAccountName": "AWS Policy Lab",
+      "mode": "deny-guardrail"
     }
   ],
   "policies": [
@@ -15,6 +22,8 @@
       "name": "deny-leave-organization",
       "type": "SERVICE_CONTROL_POLICY",
       "path": "scp/deny-leave-organization.json",
+      "awsPolicyId": "p-ukbxfvla",
+      "attachedTo": ["AWS Policy Lab (769674418312)"],
       "targetAfterLabValidation": ["App-Experiment", "Apps-Production"]
     },
     {
