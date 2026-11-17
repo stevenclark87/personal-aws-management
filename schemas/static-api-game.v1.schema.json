@@ -4,7 +4,7 @@
   "title": "Static API Game Foundation v1",
   "type": "object",
   "additionalProperties": false,
-  "required": ["contractVersion", "app", "frontend", "auth", "api", "data"],
+  "required": ["contractVersion", "app", "tags", "frontend", "auth", "api", "data"],
   "properties": {
     "contractVersion": { "const": "1.0.0" },
     "app": {
@@ -15,6 +15,15 @@
         "slug": { "type": "string", "pattern": "^[a-z0-9-]{3,40}$" },
         "environment": { "const": "production" },
         "region": { "const": "us-east-1" }
+      }
+    },
+    "tags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["costCenter", "managedBy"],
+      "properties": {
+        "costCenter": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]{1,62}$" },
+        "managedBy": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]{2,62}$" }
       }
     },
     "frontend": {

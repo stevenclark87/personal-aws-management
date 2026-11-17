@@ -13,6 +13,7 @@ import { Construct } from "constructs";
 export interface StaticApiGameConfig {
   contractVersion: "1.0.0";
   app: { slug: string; environment: "production"; region: "us-east-1" };
+  tags: { costCenter: string; managedBy: string };
   frontend: { distPath: string; allowedOrigins: string[] };
   auth: { issuerUrl: string; audience: string };
   api: { lambdaCodePath: string; lambdaHandler: string };
@@ -32,6 +33,10 @@ export class StaticApiGameStack extends cdk.Stack {
   public constructor(scope: Construct, id: string, props: StaticApiGameStackProps) {
     super(scope, id, props);
     const { config } = props;
+    cdk.Tags.of(this).add("Application", config.app.slug);
+    cdk.Tags.of(this).add("Environment", config.app.environment);
+    cdk.Tags.of(this).add("CostCenter", config.tags.costCenter);
+    cdk.Tags.of(this).add("ManagedBy", config.tags.managedBy);
 
     const assets = new s3.Bucket(this, "FrontendAssets", {
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,

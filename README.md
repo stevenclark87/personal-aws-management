@@ -16,6 +16,8 @@ The first consumer will be Math Facts Space Academy, but this repository does no
 
 See [config/static-api-game.v1.example.json](config/static-api-game.v1.example.json) and [schemas/static-api-game.v1.schema.json](schemas/static-api-game.v1.schema.json). The consuming application supplies its built frontend path, Lambda code path, Auth0 issuer/audience, and permitted browser origins. Secrets are never part of this contract. A foundation must match an application's data schema and routes before it becomes that application's deployment source.
 
+Every foundation configuration must also provide the standard cost-allocation tags: `Application`, `Environment`, `CostCenter`, and `ManagedBy`. `Application` and `Environment` derive from the app contract; `CostCenter` and `ManagedBy` are explicit platform inputs.
+
 ## Local review commands
 
 ```sh

@@ -5,6 +5,10 @@
     "environment": "production",
     "region": "us-east-1"
   },
+  "tags": {
+    "costCenter": "personal-apps",
+    "managedBy": "personal-aws-management"
+  },
   "frontend": {
     "distPath": "test/fixtures/frontend",
     "allowedOrigins": ["https://test.example.com"]

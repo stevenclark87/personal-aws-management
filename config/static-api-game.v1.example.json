@@ -6,6 +6,10 @@
     "environment": "production",
     "region": "us-east-1"
   },
+  "tags": {
+    "costCenter": "personal-apps",
+    "managedBy": "personal-aws-management"
+  },
   "frontend": {
     "distPath": "../math-facts-kids-game/dist",
     "allowedOrigins": ["https://replace-after-cloudfront-review.example"]
