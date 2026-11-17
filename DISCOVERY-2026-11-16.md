@@ -43,6 +43,10 @@ The following approved actions were completed and independently verified:
 
 No application resources, IAM roles, billing settings, Auth0 settings, or SCPs were changed.
 
+## Policy-lab account — created 2026-11-16
+
+**AWS Policy Lab** (`769674418312`) was created as a member account, moved to `App-Experiment`, and tagged with the standard platform tags. Its initial `OrganizationAccountAccessRole` is available for controlled lab access. No SCP or tag policy is attached to the account.
+
 ## Recommended next changes — proposed, not performed
 
 1. Leave `FullAWSAccess` in place; do not attach a service allowlist or Region-deny policy yet.

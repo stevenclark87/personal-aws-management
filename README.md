@@ -39,4 +39,4 @@ Follow [docs/runbooks/first-deployment.md](docs/runbooks/first-deployment.md). U
 
 ## Organization-policy package
 
-[policies/](policies/) contains reviewed source files and a test protocol for future organization guardrails. Its manifest intentionally has no targets: creating a file does not attach it to an OU or account. The first account request for `App-Experiment` is an example only and must receive an approved unique account email before creation.
+[policies/](policies/) contains reviewed source files and a test protocol for future organization guardrails. Its manifest intentionally has no targets: creating a file does not attach it to an OU or account. The first policy-lab account is recorded in [account-requests/policy-lab.created.md](account-requests/policy-lab.created.md); it has no policy attachments at creation.
