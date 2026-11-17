@@ -1,0 +1,21 @@
+{
+  "name": "personal-aws-app-foundation",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Versioned infrastructure foundations for personal AWS applications.",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "synth": "cdk synth --strict",
+    "diff": "cdk diff"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "aws-cdk": "^2.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.0.0",
+    "constructs": "^10.0.0"
+  }
+}

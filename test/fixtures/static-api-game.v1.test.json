@@ -1,0 +1,23 @@
+{
+  "contractVersion": "1.0.0",
+  "app": {
+    "slug": "foundation-fixture",
+    "environment": "production",
+    "region": "us-east-1"
+  },
+  "frontend": {
+    "distPath": "test/fixtures/frontend",
+    "allowedOrigins": ["https://test.example.com"]
+  },
+  "auth": {
+    "issuerUrl": "https://test.us.auth0.com/",
+    "audience": "https://foundation-fixture-api"
+  },
+  "api": {
+    "lambdaCodePath": "test/fixtures/lambda",
+    "lambdaHandler": "index.handler"
+  },
+  "data": {
+    "progressTableName": "progress"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/personal-aws-app-foundation/static-api-game.v1.schema.json",
+  "title": "Static API Game Foundation v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractVersion", "app", "frontend", "auth", "api", "data"],
+  "properties": {
+    "contractVersion": { "const": "1.0.0" },
+    "app": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slug", "environment", "region"],
+      "properties": {
+        "slug": { "type": "string", "pattern": "^[a-z0-9-]{3,40}$" },
+        "environment": { "const": "production" },
+        "region": { "const": "us-east-1" }
+      }
+    },
+    "frontend": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["distPath", "allowedOrigins"],
+      "properties": {
+        "distPath": { "type": "string", "minLength": 1 },
+        "allowedOrigins": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "format": "uri" }
+        }
+      }
+    },
+    "auth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["issuerUrl", "audience"],
+      "properties": {
+        "issuerUrl": { "type": "string", "format": "uri", "pattern": "/$" },
+        "audience": { "type": "string", "minLength": 1 }
+      }
+    },
+    "api": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lambdaCodePath", "lambdaHandler"],
+      "properties": {
+        "lambdaCodePath": { "type": "string", "minLength": 1 },
+        "lambdaHandler": { "type": "string", "pattern": "^[A-Za-z0-9_./-]+\\.[A-Za-z0-9_]+$" }
+      }
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["progressTableName"],
+      "properties": {
+        "progressTableName": { "type": "string", "pattern": "^[a-zA-Z0-9_.-]{3,80}$" }
+      }
+    }
+  }
+}

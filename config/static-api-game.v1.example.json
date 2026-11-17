@@ -1,0 +1,24 @@
+{
+  "$schema": "../schemas/static-api-game.v1.schema.json",
+  "contractVersion": "1.0.0",
+  "app": {
+    "slug": "math-facts-space-academy",
+    "environment": "production",
+    "region": "us-east-1"
+  },
+  "frontend": {
+    "distPath": "../math-facts-kids-game/dist",
+    "allowedOrigins": ["https://replace-after-cloudfront-review.example"]
+  },
+  "auth": {
+    "issuerUrl": "https://YOUR_AUTH0_TENANT.us.auth0.com/",
+    "audience": "https://math-facts-space-academy-api"
+  },
+  "api": {
+    "lambdaCodePath": "../math-facts-kids-game/dist-api",
+    "lambdaHandler": "index.handler"
+  },
+  "data": {
+    "progressTableName": "progress"
+  }
+}
