@@ -1,0 +1,25 @@
+{
+  "policyPackageVersion": "0.1.0",
+  "status": "draft-not-attached",
+  "targets": [],
+  "policies": [
+    {
+      "name": "deny-leave-organization",
+      "type": "SERVICE_CONTROL_POLICY",
+      "path": "scp/deny-leave-organization.json",
+      "targetAfterLabValidation": ["App-Experiment", "Apps-Production"]
+    },
+    {
+      "name": "standard-resource-tags",
+      "type": "TAG_POLICY",
+      "path": "tag/standard-resource-tags.json",
+      "targetAfterLabValidation": ["App-Experiment", "Apps-Production"]
+    },
+    {
+      "name": "us-east-1-region-boundary",
+      "type": "SERVICE_CONTROL_POLICY",
+      "path": "design/us-east-1-region-boundary.md",
+      "targetAfterLabValidation": ["App-Experiment"]
+    }
+  ]
+}

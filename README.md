@@ -36,3 +36,7 @@ The foundation provisions only a private S3 origin, CloudFront, HTTP API with Au
 ## Before a deployment
 
 Follow [docs/runbooks/first-deployment.md](docs/runbooks/first-deployment.md). Use the `personal-admin` IAM Identity Center profile and the target account's `OrganizationAccountAccessRole`; do not use the management-account root user.
+
+## Organization-policy package
+
+[policies/](policies/) contains reviewed source files and a test protocol for future organization guardrails. Its manifest intentionally has no targets: creating a file does not attach it to an OU or account. The first account request for `App-Experiment` is an example only and must receive an approved unique account email before creation.

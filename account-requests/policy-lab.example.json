@@ -1,0 +1,15 @@
+{
+  "requestVersion": "1.0",
+  "accountName": "AWS Policy Lab",
+  "accountEmail": "REPLACE_WITH_APPROVED_EMAIL",
+  "targetOu": "App-Experiment",
+  "purpose": "Disposable validation account for organization-policy and account-baseline changes before production promotion.",
+  "tags": {
+    "Application": "platform-policy-lab",
+    "Environment": "experiment",
+    "CostCenter": "personal-apps",
+    "ManagedBy": "personal-aws-management"
+  },
+  "initialPolicyProfile": "experiment-observe-only",
+  "approvalRequired": true
+}

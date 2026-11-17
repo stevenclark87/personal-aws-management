@@ -1,0 +1,33 @@
+{
+  "tags": {
+    "Application": {
+      "tag_key": {
+        "@@assign": "Application"
+      }
+    },
+    "Environment": {
+      "tag_key": {
+        "@@assign": "Environment"
+      },
+      "tag_value": {
+        "@@assign": ["production", "experiment"]
+      }
+    },
+    "CostCenter": {
+      "tag_key": {
+        "@@assign": "CostCenter"
+      },
+      "tag_value": {
+        "@@assign": ["personal-apps"]
+      }
+    },
+    "ManagedBy": {
+      "tag_key": {
+        "@@assign": "ManagedBy"
+      },
+      "tag_value": {
+        "@@assign": ["personal-aws-management"]
+      }
+    }
+  }
+}
