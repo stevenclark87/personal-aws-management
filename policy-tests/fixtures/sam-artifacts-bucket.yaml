@@ -1,0 +1,57 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >-
+  Policy-lab SAM artifact bucket — holds packaged review artifacts temporarily and
+  uses the standard cost-allocation tags.
+Metadata:
+  AWSToolsMetrics:
+    AWSAgentToolkit: aws-cloudformation@3
+  com.aws.cloudformation.Context:
+    arch: SAM package -> private temporary S3 artifact bucket
+    must: [policy-lab only, private, encrypted, tagged, delete after review]
+Parameters:
+  ApplicationName:
+    Type: String
+    Default: math-facts-space-academy-lab-review
+  Environment:
+    Type: String
+    Default: experiment
+    AllowedValues: [experiment]
+  CostCenter:
+    Type: String
+    Default: personal-apps
+  ManagedBy:
+    Type: String
+    Default: personal-aws-management
+Resources:
+  ArtifactsBucket:
+    Type: AWS::S3::Bucket
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: temporary private location for SAM package artifacts before review-only change-set creation
+        must: [private, encrypted, tagged, no retained artifacts]
+        mutable: free-to-tune
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+    Properties:
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault: {SSEAlgorithm: AES256}
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      LifecycleConfiguration:
+        Rules:
+          - Id: ExpireReviewArtifacts
+            Status: Enabled
+            ExpirationInDays: 7
+      Tags:
+        - {Key: Application, Value: !Ref ApplicationName}
+        - {Key: Environment, Value: !Ref Environment}
+        - {Key: CostCenter, Value: !Ref CostCenter}
+        - {Key: ManagedBy, Value: !Ref ManagedBy}
+Outputs:
+  BucketName:
+    Description: Temporary destination for SAM package artifacts.
+    Value: !Ref ArtifactsBucket

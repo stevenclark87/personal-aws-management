@@ -37,6 +37,8 @@ The foundation provisions only a private S3 origin, CloudFront, HTTP API with Au
 
 Follow [docs/runbooks/first-deployment.md](docs/runbooks/first-deployment.md). Use the `personal-admin` IAM Identity Center profile and the target account's `OrganizationAccountAccessRole`; do not use the management-account root user.
 
+The first Policy Lab review-only application change set is recorded in [change-records/math-facts-policy-lab-review-2026-11-16.md](change-records/math-facts-policy-lab-review-2026-11-16.md). It must not be executed without separate approval.
+
 ## Organization-policy package
 
 [policies/](policies/) contains reviewed source files and a test protocol for future organization guardrails. Its manifest intentionally has no targets: creating a file does not attach it to an OU or account. The first policy-lab account is recorded in [account-requests/policy-lab.created.md](account-requests/policy-lab.created.md); it has no policy attachments at creation.
