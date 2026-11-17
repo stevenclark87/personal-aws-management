@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >-
+  Policy-lab tag fixture — creates one empty private bucket to verify cross-account
+  deployment and standard resource tags without touching production.
+Metadata:
+  AWSToolsMetrics:
+    AWSAgentToolkit: aws-cloudformation@3
+  com.aws.cloudformation.Context:
+    arch: CloudFormation -> private empty S3 bucket
+    must: [policy-lab only, standard cost-allocation tags, delete after verification]
+Parameters:
+  ApplicationName:
+    Type: String
+    Default: platform-policy-lab-fixture
+  Environment:
+    Type: String
+    Default: experiment
+    AllowedValues: [experiment]
+  CostCenter:
+    Type: String
+    Default: personal-apps
+  ManagedBy:
+    Type: String
+    Default: personal-aws-management
+Resources:
+  FixtureBucket:
+    Type: AWS::S3::Bucket
+    Metadata:
+      com.aws.cloudformation.Context:
+        why: empty disposable bucket confirms deployment role and tag-policy behavior
+        must: [private, encrypted, tagged, no retained data]
+        mutable: free-to-tune
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+    Properties:
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault: {SSEAlgorithm: AES256}
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      Tags:
+        - {Key: Application, Value: !Ref ApplicationName}
+        - {Key: Environment, Value: !Ref Environment}
+        - {Key: CostCenter, Value: !Ref CostCenter}
+        - {Key: ManagedBy, Value: !Ref ManagedBy}
+Outputs:
+  FixtureBucketName:
+    Description: Disposable bucket created only for the policy-lab validation.
+    Value: !Ref FixtureBucket

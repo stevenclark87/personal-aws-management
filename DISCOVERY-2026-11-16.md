@@ -51,6 +51,8 @@ The Organizations Tag Policy type was then enabled and the reporting-only `stand
 
 The SCP policy type was then enabled. AWS attached its default `FullAWSAccess` policy to the member accounts, and the custom `deny-leave-organization` SCP (`p-ukbxfvla`) was attached to AWS Policy Lab only. The Math Facts production account has only `FullAWSAccess`; no custom SCP is attached.
 
+AWS Policy Lab then successfully deployed and deleted a one-bucket tagged CloudFormation fixture through `OrganizationAccountAccessRole`. The fixture verified the cross-account deployment path and all four standard resource tags without creating any production resource.
+
 ## Recommended next changes — proposed, not performed
 
 1. Leave `FullAWSAccess` in place; do not attach a service allowlist or Region-deny policy yet.

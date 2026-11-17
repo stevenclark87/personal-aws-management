@@ -19,3 +19,8 @@
 ## Promotion gate
 
 Promotion requires a reviewed change record, successful lab test evidence, a named rollback owner, and an explicit approval. No policy is promoted by account-vending automation merely because it exists in this repository.
+
+## Results
+
+- 2026-11-16: The tagged CloudFormation fixture deployed and was removed successfully in AWS Policy Lab. See [policy-tests/RESULTS-2026-11-16.md](../policy-tests/RESULTS-2026-11-16.md).
+- 2026-11-16: The deny-leave SCP attachment was verified. A leave request was not invoked deliberately; this does not authorize production promotion.
