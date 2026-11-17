@@ -7,13 +7,14 @@ The first consumer will be Math Facts Space Academy, but this repository does no
 ## Current status
 
 - Organization baseline and operating access are documented in [DISCOVERY-2026-11-16.md](DISCOVERY-2026-11-16.md).
-- `static-api-game/v1` is a **local, un-deployed** CDK foundation.
+- `static-api-game/v1` is a **local, un-deployed** reusable CDK prototype.
+- Math Facts Space Academy's existing SAM template remains its only deployment source of truth; see [the integration record](docs/integrations/math-facts-space-academy.md).
 - No SCPs are defined or attached by this repository.
 - Deployment requires an explicit approved change plan in the target account.
 
 ## Foundation contract
 
-See [config/static-api-game.v1.example.json](config/static-api-game.v1.example.json) and [schemas/static-api-game.v1.schema.json](schemas/static-api-game.v1.schema.json). The consuming application supplies its built frontend path, Lambda code path, Auth0 issuer/audience, and permitted browser origins. Secrets are never part of this contract.
+See [config/static-api-game.v1.example.json](config/static-api-game.v1.example.json) and [schemas/static-api-game.v1.schema.json](schemas/static-api-game.v1.schema.json). The consuming application supplies its built frontend path, Lambda code path, Auth0 issuer/audience, and permitted browser origins. Secrets are never part of this contract. A foundation must match an application's data schema and routes before it becomes that application's deployment source.
 
 ## Local review commands
 
